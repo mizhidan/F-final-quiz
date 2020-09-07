@@ -1,13 +1,16 @@
+/* eslint-disable react/jsx-no-bind */
 import React, { Component } from 'react';
 import './App.scss';
 import Header from './components/Header/Header';
 import StudentList from './components/StudentList/StudentList';
+import GroupList from './components/GroupList/GroupList';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       studentList: [],
+      sortedList: []
     };
   }
 
@@ -24,18 +27,33 @@ class App extends Component {
       .catch((error) => {
         console.log(error);
       });
+
+      fetch("http://localhost:8080/students/sort")
+      .then((response) => {
+        return response.json();
+      }).then((data) => {
+        this.setState({
+          sortedList: data,
+        })
+      })
   }
 
   handleClickSort() {
-    console.log("aaa");
+    fetch("http://localhost:8080/students/sort")
+    .then((response) => {
+      return response.json();
+    }).then((data) => {
+      this.setState({
+        sortedList: data,
+      })
+    })
   }
-
-
 
   render() {
     return (
       <div data-testid="app" className="App">
-        <Header handleClickSort={this.handleClickSort()}/>
+        <Header handleClickSort={this.handleClickSort.bind(this)}/>
+        <GroupList sortedList={this.state.sortedList}/>
         <StudentList studentList={this.state.studentList}/>
       </div>
     );

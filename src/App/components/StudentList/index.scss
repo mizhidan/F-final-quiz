@@ -4,6 +4,7 @@
   display: flex;
   flex-flow: wrap;
   margin: 0 2%;
+  background-color: $bg-gray;
   .name-box {
     flex: 1;
     width: 10.5%;
@@ -11,7 +12,30 @@
     max-width: 10.5%;
     padding: 10px 5px;
     background-color: $light-gray;
-    margin: 5px;
+    margin: 20px 5px;
     text-align: center;
   }
+  button {
+    flex: 1;
+    width: calc(10.5% + 10px);
+    min-width: calc(10.5% + 10px);
+    max-width: calc(10.5% + 10px);
+    padding: 10px 5px;
+    height: calc(100% - 40px);
+    background-color: $bg-gray;
+    margin: 20px 5px;
+    text-align: center;
+    border: 1px solid black;
+  }
+  .input-box {
+    flex: 1;
+    width: calc(10.5% - 5px);
+    min-width: calc(10.5% - 5px);
+    max-width: calc(10.5% - 5px);
+    padding: 10px 5px;
+    height: calc(100% - 40px);
+    background-color: $bg-gray;
+    margin: 20px 5px;
+    border: none;
+  };
 }

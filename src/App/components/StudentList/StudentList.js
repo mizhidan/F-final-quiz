@@ -5,7 +5,15 @@ class StudentList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      display: false,
     };
+  }
+
+
+  handleClick(e) {
+    this.setState({
+      display: true,
+    })
   }
 
 
@@ -21,6 +29,8 @@ class StudentList extends React.Component {
               </span>
             );
           })}
+          {this.state.display && <input type="name" className="input-box"/>} 
+          <button type="button" onClick={this.handleClick.bind(this)}>+添加学员</button>
         </div>
       </div>
     );
