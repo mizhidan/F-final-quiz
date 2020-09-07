@@ -1,0 +1,15 @@
+@import 'src/style/_variables.scss';
+
+.headers {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .get-student-list-btn {
+    background-color: $primary-color;
+    outline: none;
+    border: 0;
+    color: white;
+    height: 37px;
+  }
+}
