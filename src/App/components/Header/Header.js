@@ -7,11 +7,15 @@ class Header extends React.Component {
     this.state = {};
   }
 
+  handleClick() {
+
+  }
+
   render() {
     return (
       <div className="headers">
         <h1>分组列表</h1>
-        <button className="get-student-list-btn" type="button">
+        <button className="get-student-list-btn" type="button" onClick={this.props.handleClick}>
           分组学员
         </button>
       </div>
