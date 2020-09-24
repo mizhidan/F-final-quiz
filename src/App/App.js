@@ -15,7 +15,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:8080/students/list')
+    fetch('http://localhost:8080/students')
       .then((response) => {
         return response.json();
       })
@@ -27,19 +27,10 @@ class App extends Component {
       .catch((error) => {
         console.log(error);
       });
-
-      fetch("http://localhost:8080/students/sort")
-      .then((response) => {
-        return response.json();
-      }).then((data) => {
-        this.setState({
-          sortedList: data,
-        })
-      })
   }
 
   handleClickSort() {
-    fetch("http://localhost:8080/students/sort")
+    fetch("http://localhost:8080/students")
     .then((response) => {
       return response.json();
     }).then((data) => {
