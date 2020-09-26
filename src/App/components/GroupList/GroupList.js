@@ -8,7 +8,7 @@ class GroupList extends React.Component {
     }
 
 
-
+// TODO feedback：可以再格式化一下，保证代码缩进一致
     render() {
         return(
             <div className="group-list">

@@ -14,6 +14,7 @@ class App extends Component {
     };
   }
 
+  // TODO feedback：建议把获取数据的逻辑提取到单独的方法中
   componentDidMount() {
     fetch('http://localhost:8080/students')
       .then((response) => {
